@@ -1,0 +1,76 @@
+<!doctype>
+<html lang="ru">
+<head>
+	<title>Автопрефиксер онлайн – приведет ваши вендорные префиксы в порядок (autoprefixer online)</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=960">
+	<meta name="description" content="Автопрефиксер онлайн (autoprefixer online) — инструмент для расстановки вендорнов префиксов для нужных браузеров.">
+	<meta name="keywords" content="autoprefixer online prefix css вендорные префиксы автопрефиксер префиксы">
+	<meta name="google-site-verification" content="oQtypZKgCSL-wuDuGoZzV6-rJJnV_p6QT1dTyVid_2E">
+
+	<link rel="icon" type="image/png" href="/favicon.png?v=2">
+	<!--[if IE]><link rel="shortcut icon" href="/favicon.ico?v=2"><![endif]-->
+	<link rel="stylesheet" href="/style.css">
+
+	<script>
+		var ln = window.navigator.userLanguage || window.navigator.language;
+		if (ln != 'ru' && !localStorage.loadedBefore) location.href = '/ru/'
+
+		localStorage.loadedBefore = true;
+	</script>
+</head>
+
+<body>
+	<div class="header">
+		<a href="/" class="header__lang">en</a>
+		<a class="header__instruction" href="//ymatuhin.ru/autoprefixer_instruction/">Как пользоваться?</a>
+		<div class="header__slide">
+			<h1>Автопрефиксер онлайн (autoprefixer online)</h1>
+			<h2>Добавляем нужные вендорные префиксы и удаляем ненужные в вашем CSS</h2>
+		</div>
+	</div>
+
+	<div class="textarea-box">
+		<textarea autofocus class="textarea textarea-left js-input" placeholder="/* Вставьте ваш CSS код в левую колонку вместо примера, чтобы проставить или удалить лишние префиксы. */"></textarea>
+		<pre class="textarea textarea-right"><code class="language-css js-output">/* Тут будет ваш CSS только с нужными префиксами */</code></pre>
+
+		<div class="info">
+			<h2>Префиксы проставляются в соответствии с последними данными о поддержке CSS свойств в браузерах на основе сайта <a href="//caniuse.com">caniuse</a>. Вы можете выбрать под какой браузер вам нужны префиксы. Внизу левой колонки есть фильтр, с его синтаксисом можно ознакомиться у меня на сайте <a href="//ymatuhin.ru/autoprefixer_instruction/#browsers_settings">ymatuhin.ru</a>.</h2>
+		</div>
+
+		<button class="select select_right js-select">Выделить результат</button>
+	</div>
+
+	<div class="footer">
+		<form action="" class="filter js-filter">
+			<label class="filter__text">Фильтр (<a href="//ymatuhin.ru/autoprefixer_instruction/#browsers_settings">справка</a>): </label>
+			<input type="text" class="filter__input js-browsers-filter" placeholder="> 1%, last 2 versions, Firefox ESR, Opera 12.1">
+			<input type="submit" class="filter__apply" value="Применить">
+		</form>
+
+		<ul class="tags">
+			<li>autoprefixer
+			<li>online
+			<li>css
+			<li>автопрефиксер
+			<li>вендорные префиксы
+			<li>браузер
+		</ul>
+
+		<p class="author">By <a href="//ymatuhin.ru" title="Автор проекта Autoprefixer online — Юрий Матюхин">ymatuhin</a> and <a href="//github.com/postcss/autoprefixer">autoprefixer</a></p>
+	</div>
+
+	<script async src="/highlight.js"></script>
+	<script src="//rawgithub.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js"></script>
+	<script>window.autoprefixer || document.write('<script src="/autoprefixer.js">\x3C/script>')</script>
+	<script src="/code.js"></script>
+
+	<link rel="stylesheet" href="/highlight.css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cuprum:400,700&subset=latin,cyrillic">
+
+	<!-- Yandex.Metrika counter -->
+	<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script><script type="text/javascript">try { var yaCounter26786013 = new Ya.Metrika({id:26786013, clickmap:true}); } catch(e) { }</script><noscript><div><img src="//mc.yandex.ru/watch/26786013" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+</body>
+</html>
