@@ -14,10 +14,11 @@
 	<link rel="stylesheet" href="/style.css">
 
 	<script>
-		var ln = window.navigator.userLanguage || window.navigator.language;
-		if (ln == 'ru' && !localStorage.loadedBefore) location.href = '/ru/'
+		var ln = localStorage.langBefore || window.navigator.userLanguage || window.navigator.language;
 
-		localStorage.loadedBefore = true;
+		if (ln == 'ru') location.href = '/ru/'
+
+		localStorage.langBefore = ln;
 	</script>
 	</script>
 </head>
