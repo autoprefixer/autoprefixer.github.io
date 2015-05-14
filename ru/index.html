@@ -14,11 +14,10 @@
 	<link rel="stylesheet" href="/style.css">
 
 	<script>
-		var ln = localStorage.langBefore || window.navigator.userLanguage || window.navigator.language;
-
-		if (ln != 'ru') location.href = '/'
-
-		localStorage.langBefore = ln;
+		var ln = window.navigator.userLanguage || window.navigator.language;
+		var _loaded = localStorage.loadedBefore;
+		localStorage.loadedBefore = true;
+		if (ln != 'ru' && !_loaded) location.href = '/'
 	</script>
 </head>
 
@@ -59,7 +58,7 @@
 			<li>браузер
 		</ul>
 
-		<p class="author">By <a href="//ymatuhin.ru" title="Автор проекта Autoprefixer online — Юрий Матюхин">ymatuhin</a> and <a href="//github.com/postcss/autoprefixer">autoprefixer</a></p>
+		<p class="author"><a href="//ymatuhin.ru" title="Автор проекта Autoprefixer online — Юрий Матюхин">ymatuhin</a></p>
 	</div>
 
 	<script async src="/highlight.js"></script>

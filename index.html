@@ -1,7 +1,7 @@
 <!doctype>
 <html lang="en">
 <head>
-	<title>1 Autoprefixer online – make your vendor prefixes is actual.</title>
+	<title>Autoprefixer online – make your vendor prefixes is actual.</title>
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=960">
@@ -14,12 +14,10 @@
 	<link rel="stylesheet" href="/style.css">
 
 	<script>
-		var ln = localStorage.langBefore || window.navigator.userLanguage || window.navigator.language;
-
-		if (ln == 'ru') location.href = '/ru/'
-
-		localStorage.langBefore = ln;
-	</script>
+		var ln = window.navigator.userLanguage || window.navigator.language;
+		var _loaded = localStorage.loadedBefore;
+		localStorage.loadedBefore = true;
+		if (ln == 'ru' && !_loaded) location.href = '/ru/'
 	</script>
 </head>
 
@@ -45,6 +43,7 @@
 	</div>
 
 	<div class="footer">
+
 		<form action="" class="filter js-filter">
 			<label class="filter__text">Filter (<a href="//ymatuhin.ru/autoprefixer_instruction/#browsers_settings">help</a> in russian): </label>
 			<input type="text" class="filter__input js-browsers-filter" placeholder="> 1%, last 2 versions, Firefox ESR, Opera 12.1">
@@ -59,7 +58,7 @@
 			<li>browser
 		</ul>
 
-		<p class="author">By <a href="//ymatuhin.ru" title="Project author Autoprefixer online — Yury Matuhin">ymatuhin</a> and <a href="//github.com/postcss/autoprefixer">autoprefixer</a></p>
+		<p class="author"><a href="//ymatuhin.ru" title="Project author Autoprefixer online — Yury Matuhin">ymatuhin</a></p>
 	</div>
 
 	<script async src="/highlight.js"></script>
