@@ -14,16 +14,17 @@
 	<link rel="stylesheet" href="/style.css">
 
 	<script>
-		var ln = window.navigator.userLanguage || window.navigator.language;
-		var _loaded = localStorage.loadedBefore;
-		localStorage.loadedBefore = true;
-		if (ln != 'ru' && !_loaded) location.href = '/'
+		var ln = (localStorage.lng || window.navigator.userLanguage || window.navigator.language).toLowerCase();
+		localStorage.lng = ln;
+
+		if (ln != 'ru') location.href = '/'
 	</script>
 </head>
 
 <body>
 	<div class="header">
 		<a href="/" class="header__lang">en</a>
+		<script>document.querySelector('.header__lang').onclick = function () { localStorage.lng = 'en' }</script>
 		<a class="header__instruction" href="//ymatuhin.ru/autoprefixer_instruction/">Как пользоваться?</a>
 		<div class="header__slide">
 			<h1>Автопрефиксер онлайн (autoprefixer online)</h1>
