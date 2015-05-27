@@ -151,12 +151,13 @@ html body .textarea {
 .tags {
 	clear: both;
 	margin: 0;
-	padding: 5px 0 0;
+	padding: 6px 0 4px;
 	list-style-type: none;
 	color: #ccc;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	/* font-size: .8em; */
 }
 .tags li {
 	display: inline-block;
