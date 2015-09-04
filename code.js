@@ -1,7 +1,7 @@
 (function() {
 	var App = function () {
 		this.settings = {
-			_browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
+			_browsers: ['> 1%', 'last 2 versions'],
 			browsers: localStorage.browsers || this._browsers,
 		};
 		this.elems = {
@@ -42,9 +42,11 @@
 				function inTimeout () {
 					var compiled;
 					try {
-						compiled = autoprefixer({
-							browsers: this.settings.browsers
-						}).process(text, { safe: true });
+						compiled = autoprefixer.process(text, { browsers: this.settings.browsers });
+
+						// autoprefixer(opts).process(css)
+						// autoprefixer.process(css, opts)
+
 					} catch (e) {
 						compiled = {
 							css: e
