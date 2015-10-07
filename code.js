@@ -43,14 +43,13 @@
 					var compiled;
 					try {
 						compiled = autoprefixer.process(text, { browsers: this.settings.browsers });
+						if (compiled.error) throw compiled.error;
 
 						// autoprefixer(opts).process(css)
 						// autoprefixer.process(css, opts)
 
 					} catch (e) {
-						compiled = {
-							css: e
-						};
+						compiled = { css: e.toString() };
 					}
 
 					this.elems.right.innerHTML = compiled.css;
