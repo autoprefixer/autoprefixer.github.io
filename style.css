@@ -152,8 +152,9 @@ html body .textarea {
 
 .adsbygoogle {
 	position: absolute;
-    top: 45%;
-    right: 2.5%;
+    top: 50%;
+    right: 2%;
+	width: 46%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
 }
