@@ -148,6 +148,16 @@ html body .textarea {
 	box-shadow: 0 0 8px 1px rgba(0, 0, 0, .3);
 	background: #fbfbfb;
 }
+.footer > * { width: 50% }
+
+.adsbygoogle {
+	position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
 .tags {
 	clear: both;
 	margin: 0;
@@ -156,8 +166,6 @@ html body .textarea {
 	color: #ccc;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
-	/* font-size: .8em; */
 }
 .tags li {
 	display: inline-block;
@@ -168,7 +176,7 @@ html body .textarea {
 	content: '#';
 }
 .author {
-	margin-top: 0;
+	margin: 0 0 6px;
 }
 textarea {
 	border: none;
@@ -182,7 +190,7 @@ textarea {
 }
 .filter {
 	display: block;
-	padding: 10px 0 0 0;
+	padding: 12px 0 0 0;
 	margin: 0;
 }
 .filter * {
