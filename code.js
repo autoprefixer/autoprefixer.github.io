@@ -1,7 +1,7 @@
 (function() {
 	var App = function () {
 		this.settings = {
-			_browsers: ['> 1%', 'last 2 versions'],
+			_browsers: [],
 			browsers: localStorage.browsers || this._browsers,
 		};
 		this.elems = {
