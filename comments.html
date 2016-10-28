@@ -26,7 +26,7 @@ function receiveMessage(event)
 </script>
 <script>
     var disqus_config = function () {
-        this.page.url = window.location.hash;
+        this.page.url = window.location.hash.slice(1);
         this.page.identifier = window.location.hash;
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
