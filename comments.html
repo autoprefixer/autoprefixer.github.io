@@ -1,16 +1,28 @@
 <style>
     body {
         margin: 0;
-        color: #cdd3de;
-    	background: #253237;
+        font-family: system, -apple-system, BlinkMacSystemFont, ".SFNSDisplay-Regular", sans-serif;
+        font-size: 1em;
+        line-height: 1.5;
     }
-    a:link { color: #89ddff }
-    a:visited { color: #c792ea }
+    a:link {
+        color: #0089ff;
+        text-decoration: none;
+        // border-bottom: .1em solid rgba(0,137,255,.3);
+        -webkit-transition: color .3s ease,border-color .3s ease;
+        transition: color .3s ease,border-color .3s ease
+    }
 
-    a:link:hover,
-    a:visited:hover {
-    	color: #f77669;
+    a:visited {
+        color: #b40eb4;
+        border-color: rgba(180,14,180,.3)
     }
+
+    a:link:hover,a:visited:hover {
+        color: #f41224;
+        border-color: rgba(244,18,36,.3)
+    }
+
 </style>
 
 <div id="disqus_thread"></div>
