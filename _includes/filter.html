@@ -1,0 +1,20 @@
+<form action="" class="filter js-filter">
+	{% if page.lang == 'en' %}
+		<label class="filter__text">Filter&nbsp;</label>
+	{% endif %}
+	{% if page.lang == 'ru' %}
+		<label class="filter__text">Фильтр&nbsp;</label>
+	{% endif %}
+
+	<input type="text" class="filter__input js-browsers-filter" placeholder="> 1%, last 2 versions">
+	<input type="submit" class="filter__apply" value="{% if page.lang == 'en' %}Apply{% endif %}{% if page.lang == 'ru' %}Применить{% endif %}">
+
+	<button class="select js-select" type="button">
+		{% if page.lang == 'en' %}
+			Select result
+		{% endif %}
+		{% if page.lang == 'ru' %}
+			Выделить результат
+		{% endif %}
+	</button>
+</form>

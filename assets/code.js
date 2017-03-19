@@ -1,8 +1,9 @@
 (function() {
+	const DEFAULT_SETTINGS = ["last 4 version"]
+	
 	var App = function () {
 		this.settings = {
-			_browsers: [],
-			browsers: localStorage.browsers || this._browsers,
+			browsers: localStorage.browsers || DEFAULT_SETTINGS,
 		};
 		this.elems = {
 			left: document.querySelector('.js-input'),
@@ -12,12 +13,12 @@
 			selectBtn: document.querySelector('.js-select')
 		};
 
-		this.elems.left.innerHTML = '.example {\n    display: flex;\n    transition: all .5s;\n    user-select: none;\n    background: linear-gradient(to bottom, white, black);\n}';
+		this.elems.left.innerHTML = '/* Put your CSS code in the left column, instead of example, to put or remove unnecessary prefixes. */\n\n.example {\n    display: flex;\n    transition: all .5s;\n    user-select: none;\n    background: linear-gradient(to bottom, white, black);\n}';
 		this.init();
 	};
 	App.prototype = {
 		init: function () {
-			this.elems.textFilter.value = localStorage.browsers || '';
+			this.elems.textFilter.value = localStorage.browsers || DEFAULT_SETTINGS.join(', ');
 
 			this.autoprefixer();
 			this.listeners();
@@ -88,29 +89,24 @@
 			localStorage.browsers = str;
 
 			if (!str.length || str[0] === '')
-				this.settings.browsers = this.settings._browsers;
+				this.settings.browsers = DEFAULT_SETTINGS;
 
 			this.autoprefixer();
 		},
 		selectRez: function () {
 			if (document.createRange) {
-				App.selectRez = function () {
-					var rng, sel;
-					rng = document.createRange();
-					rng.selectNode(this.elems.right);
-					sel = window.getSelection();
-					sel.removeAllRanges();
-					sel.addRange(rng);
-				};
+				var rng, sel;
+				rng = document.createRange();
+				rng.selectNode(this.elems.right);
+				sel = window.getSelection();
+				sel.removeAllRanges();
+				sel.addRange(rng);
 			} else {
-				App.selectRez = function () {
-					var rng;
-					rng = document.body.createTextRange();
-					rng.moveToElementText(this.elems.right);
-					rng.select();
-				};
+				var rng;
+				rng = document.body.createTextRange();
+				rng.moveToElementText(this.elems.right);
+				rng.select();
 			}
-			App.selectRez.bind(this)();
 		}
 	};
 

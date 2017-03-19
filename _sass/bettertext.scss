@@ -1,0 +1,246 @@
+/*! bettertext.css v2.0.1 | MIT License | github.com/paulradzkov/bettertext.css */
+body {
+  font-family: system, -apple-system, BlinkMacSystemFont, ".SFNSDisplay-Regular", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+body:not([class]),
+article:not([class]),
+section:not([class]) {
+  margin: calc(24px + 4vh) calc(10px + 4vw);
+}
+
+body:not([class]) article:not([class]),
+article:not([class]) article:not([class]),
+section:not([class]) article:not([class]),
+body:not([class]) section:not([class]),
+article:not([class]) section:not([class]),
+section:not([class]) section:not([class]) {
+  margin-left: 0;
+  margin-right: 0;
+}
+p {
+  margin: 0 0 1.5em;
+  max-width: 50rem;
+}
+/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/ */
+p:before,
+ol:not([class]):before,
+ul:not([class]):before {
+  content: '';
+  display: block;
+  width: 10em;
+  overflow: hidden;
+}
+li p:before {
+  content: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+h1 {
+  font-size: 1.625em;
+  line-height: 1.1;
+  margin: 3.23076923em 0 0.92307692em;
+}
+h2 {
+  font-size: 1.4375em;
+  line-height: 1.2;
+  margin: 3.13043478em 0 1.04347826em;
+}
+h3 {
+  font-size: 1.25em;
+  line-height: 1.3;
+  margin: 3em 0 1.2em;
+}
+h4 {
+  font-size: 1.125em;
+  line-height: 1.4;
+  margin: 2.66666667em 0 1.33333333em;
+}
+h5 {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 2.25em 0 1.5em;
+}
+h6 {
+  font-size: 0.75em;
+  line-height: 2;
+  margin: 2em 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.4375em;
+    margin-top: 3.07692308em;
+    margin-bottom: 0.61538462em;
+  }
+  h2 {
+    font-size: 1.9375em;
+    margin-top: 3.09677419em;
+    margin-bottom: 0.77419355em;
+  }
+  h3 {
+    font-size: 1.5625em;
+    margin-top: 2.88em;
+    margin-bottom: 0.96em;
+  }
+  h4 {
+    font-size: 1.25em;
+    margin-top: 2.4em;
+    margin-bottom: 1.2em;
+  }
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+/* double headers */
+h1 + h2 {
+  margin-top: 1.2em;
+}
+h2 + h3 {
+  margin-top: 1.3em;
+}
+h3 + h4 {
+  margin-top: 1.4em;
+}
+h4 + h5 {
+  margin-top: 1.5em;
+}
+h5 + h6 {
+  margin-top: 2em;
+}
+/* lists */
+/* lists without classes */
+ul:not([class]),
+ol:not([class]) {
+  margin: 0 0 1.5em;
+  max-width: calc(47.5rem);
+  padding-left: 0;
+  padding-right: 2.5em;
+}
+ul:not([class]) ul,
+ol:not([class]) ul,
+ul:not([class]) ol,
+ol:not([class]) ol {
+  margin-bottom: 0;
+}
+ul:not([class]) li,
+ol:not([class]) li {
+  transform: translateX(2.5em);
+}
+/* images */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+figure:not([class]) {
+  margin: 3em 0;
+}
+figure:not([class]) > p {
+  max-width: 37.5rem;
+  font-size: 0.75em;
+  margin: 0.5em 0 0;
+}
+figcaption {
+  max-width: 37.5rem;
+  font-size: 0.75em;
+  margin: 0.5em 0 3em;
+}
+figcaption > p {
+  margin: 0.5em 0 0;
+}
+/* blockquotes */
+blockquote {
+  max-width: calc(45rem);
+  margin: 0 0 1.5em;
+  padding: 1.5em 2.5em;
+}
+blockquote > p:last-child {
+  margin-bottom: 0;
+}
+blockquote > footer,
+blockquote > cite {
+  display: block;
+  font-size: 0.75em;
+}
+/* code */
+pre {
+  margin: 1.5em 0;
+  white-space: pre-wrap;
+}
+/* tables */
+table:not([class]) {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table:not([class]) caption {
+  text-align: left;
+  font-size: 0.75em;
+  margin-bottom: 0.625em;
+}
+table:not([class]) td,
+table:not([class]) th {
+  padding: 0.5em 1em;
+  text-align: left;
+  vertical-align: top;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-width: 0 0 1px;
+}
+table:not([class]) thead td,
+table:not([class]) thead th {
+  vertical-align: bottom;
+  border-bottom-width: 2px;
+}
+/* definition lists */
+dl:not([class]) {
+  max-width: 50rem;
+  margin: 0 0 1.5em;
+}
+dl:not([class]) dt:not([class]) {
+  font-weight: bolder;
+}
+dl:not([class]) dd:not([class]) {
+  margin: 0 0 1.5em;
+}
+/* other tags */
+hr:not([class]) {
+  border: 0;
+  border-bottom: 1px solid;
+  margin: 1.5em 0;
+  max-width: 50rem;
+  opacity: .1;
+}
+abbr {
+  letter-spacing: .05em;
+  margin-right: -0.05em;
+}
+strong,
+b,
+dt {
+  font-weight: bolder;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
