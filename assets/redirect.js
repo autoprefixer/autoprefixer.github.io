@@ -1,10 +1,8 @@
 var DEFAULT_LANG = 'en'
-var HOME_PAGE_LANG = 'ru'
+var HOME_PAGE_LANG = 'en'
 var PATHES = {
   "ru": "/ru/",
   "en": "/",
-  // "ua": "/ua/",
-  // "be": "/be/",
 }
 
 var userLang = navigator.language || navigator.userLanguage;
