@@ -9,14 +9,14 @@
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}?v={{ site.time | date: '%s%N' }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <meta property="og:image" content="/assets/googe_dino.png"> 
+  <meta property="og:image" content="/assets/googe_dino.png">
 
   {% if page.lang != 'en' %}
-    <link rel="alternate" hreflang="en" href="{{ site.url }}/en/">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}/">
   {% endif %}
 
   {% if page.lang != 'ru' %}
-    <link rel="alternate" hreflang="ru" href="{{ site.url }}/">
+    <link rel="alternate" hreflang="ru" href="{{ site.url }}/ru/">
   {% endif %}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
