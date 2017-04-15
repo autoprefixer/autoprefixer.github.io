@@ -1,6 +1,6 @@
 (function() {
 	const DEFAULT_SETTINGS = ["last 4 version"]
-	
+
 	var App = function () {
 		this.settings = {
 			browsers: localStorage.browsers || DEFAULT_SETTINGS,
@@ -32,11 +32,17 @@
 			this.elems.left.addEventListener('scroll', this.scroller.bind(this), false);
 			this.elems.right.addEventListener('scroll', this.scroller.bind(this), false);
 		},
+		textPrepare: function () {
+			var text = this.elems.left.value;
+			return text
+				.replace(/\</g, '&lt;')
+				.replace(/\>/g, '&gt;')
+		},
 		autoprefixer: (function () {
 			var timer = '';
 
 			return function () {
-				var text = this.elems.left.value;
+				var text = this.textPrepare();
 
 				clearTimeout(timer);
 				timer = setTimeout(inTimeout.bind(this), 250);
