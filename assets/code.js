@@ -32,8 +32,7 @@
 			this.elems.left.addEventListener('scroll', this.scroller.bind(this), false);
 			this.elems.right.addEventListener('scroll', this.scroller.bind(this), false);
 		},
-		textPrepare: function () {
-			var text = this.elems.left.value;
+		textPrepare: function (text) {
 			return text
 				.replace(/\</g, '&lt;')
 				.replace(/\>/g, '&gt;')
@@ -42,7 +41,7 @@
 			var timer = '';
 
 			return function () {
-				var text = this.textPrepare();
+				var text = this.elems.left.value;
 
 				clearTimeout(timer);
 				timer = setTimeout(inTimeout.bind(this), 250);
@@ -59,7 +58,7 @@
 						compiled = { css: e.toString() };
 					}
 
-					this.elems.right.innerHTML = compiled.css;
+					this.elems.right.innerHTML = this.textPrepare(compiled.css);
 					this.highlighter(this.elems.right);
 					this.highlighter(this.elems.left);
 				}
