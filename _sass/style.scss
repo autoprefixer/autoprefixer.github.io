@@ -30,10 +30,7 @@ a:link:hover,a:visited:hover {
 }
 
 .ads {
-	max-width: 728px;
-	border: 1px solid #ddd;
 	overflow: hidden;
-	// margin: 0 0 1.5em;
 }
 
 .line { height: 1.5em; }
@@ -76,7 +73,7 @@ a:link:hover,a:visited:hover {
 
 		@media (max-width: 920px) {
 			width: 100%;
-		}		
+		}
 	}
 }
 
