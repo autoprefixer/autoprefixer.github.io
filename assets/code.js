@@ -40,7 +40,7 @@
             this.elems.linkViewBrowsers.href = encodeURI('http://browserl.ist/?q='+this.elems.textFilter.value);
         },
         textPrepare: function(text) {
-            var safeText = test || '';
+            var safeText = text || '';
             return safeText.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
         },
         autoprefixer: function() {
