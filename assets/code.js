@@ -48,18 +48,14 @@
         },
         prefixProcess() {
             var text = this.elems.left.value;
-            var compiled;
-
+            var params = { browsers: this.settings.browsers };
             try {
-                compiled = autoprefixer.process(text, {}, { browsers: this.settings.browsers });
-                if (compiled.error) throw compiled.error;
-            } catch (e) {
-                compiled = { css: e.toString() };
+                var compiled = autoprefixer.process(text, {}, params);
+                this.elems.right.innerHTML = this.textPrepare(compiled.css);
+            } catch (error) {
+                this.elems.right.innerHTML = this.textPrepare(error.toString());
             }
-
-            this.elems.right.innerHTML = this.textPrepare(compiled.css);
             this.highlighter(this.elems.right);
-            this.highlighter(this.elems.left);
         },
         highlighter: function(elem) {
             try {
