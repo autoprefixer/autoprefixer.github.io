@@ -40,7 +40,8 @@
             this.elems.linkViewBrowsers.href = encodeURI('http://browserl.ist/?q='+this.elems.textFilter.value);
         },
         textPrepare: function(text) {
-            return text.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
+            var safeText = test || '';
+            return safeText.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
         },
         autoprefixer: function() {
             clearTimeout(timer);
@@ -95,7 +96,7 @@
             if (document.createRange) {
                 var rng, sel;
                 rng = document.createRange();
-                rng.selectNode(this.elems.right);
+                if (rng.selectNode) rng.selectNode(this.elems.right);
                 sel = window.getSelection();
                 sel.removeAllRanges();
                 sel.addRange(rng);
