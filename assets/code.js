@@ -9,6 +9,7 @@
             right: document.querySelector(".js-output"),
             filterForm: document.querySelector(".js-filter"),
             textFilter: document.querySelector(".js-browsers-filter"),
+            linkViewBrowsers: document.querySelector(".js-link-browserlist"),
             selectBtn: document.querySelector(".js-select")
         };
 
@@ -23,6 +24,7 @@
             this.autoprefixer();
             this.listeners();
             this.focusInArea();
+            this.updateLink();
         },
         listeners: function() {
             this.elems.left.addEventListener("keyup", this.autoprefixer.bind(this), false);
@@ -31,6 +33,11 @@
 
             this.elems.left.addEventListener("scroll", this.scroller.bind(this), false);
             this.elems.right.addEventListener("scroll", this.scroller.bind(this), false);
+
+            this.elems.textFilter.addEventListener("change", this.updateLink.bind(this), false);
+        },
+        updateLink: function(){
+            this.elems.linkViewBrowsers.href = encodeURI('http://browserl.ist/?q='+this.elems.textFilter.value);
         },
         textPrepare: function(text) {
             return text.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
