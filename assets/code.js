@@ -24,7 +24,7 @@
             this.autoprefixer();
             this.listeners();
             this.focusInArea();
-            this.this.updateLink();
+            this.updateLink();
         },
         listeners: function() {
             this.elems.left.addEventListener("keyup", this.autoprefixer.bind(this), false);
