@@ -102,7 +102,7 @@
                 sel = window.getSelection();
                 sel.removeAllRanges();
                 sel.addRange(rng);
-            } else {
+            } else if (document.body && document.body.createTextRange) {
                 var rng;
                 rng = document.body.createTextRange();
                 rng.moveToElementText(this.elems.right);
