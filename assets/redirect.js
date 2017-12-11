@@ -10,6 +10,8 @@ var lang = userLang.split('-')[0].toLowerCase() || DEFAULT_LANG;
 var path = location.pathname.replace(/\//g, '') || HOME_PAGE_LANG;
 
 (function() {
+  if (!sessionStorage) return;
+
   if (lang == path) {
     sessionStorage.redirected = true
     return
