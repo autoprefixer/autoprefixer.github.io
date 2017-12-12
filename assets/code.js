@@ -49,7 +49,7 @@
             clearTimeout(timer);
             timer = setTimeout(this.prefixProcess.bind(this), 250);
         },
-        prefixProcess() {
+        prefixProcess: function() {
             var text = this.elems.left.value;
             var params = { browsers: this.settings.browsers };
             try {
