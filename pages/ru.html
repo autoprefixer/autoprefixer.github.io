@@ -2,8 +2,8 @@
 layout: default
 permalink: /ru/
 lang: ru
-title: Автопрефиксер CSS онлайн – забудьте про вендорные префиксы в CSS
-description: Автопрефиксер CSS онлайн (autoprefixer css online) — инструмент для расстановки вендорных префиксов для нужных браузеров. #autoprefixer #online #css #автопрефиксер #вендорные префиксы #браузер #свойства #transition #transform #perspective #user-select #linear-gradient #webkit #moz #flex #кроссбраузерно
+title: Автопрефиксер CSS онлайн
+description: Автопрефиксер — плагин для PostCSS для добавления вендорных префиксов в CSS
 ---
 
 {% include ads.html %}
@@ -13,20 +13,27 @@ description: Автопрефиксер CSS онлайн (autoprefixer css onlin
 
 <p>Вы также можете посмотреть, какие браузеры вы выбираете по строке фильтра на <a class="js-link-browserlist" href="http://browserl.ist">browserl.ist</a></p>
 
+<p>{% include sharing-buttons.html %}</p>
+{% include ads.html %}
+
 <h2>Что это</h2>
 <p>
-	Автопрефиксер — сервис для управления вендорными префиксами.
-	Он добавляет недостающие префиксы и удаляет устаревшие.
+	Автопрефиксер онайлн — веб сервис для расстановки вендорнымх префиксов для лучшей кроссбраузерности.
 	Его <a href="https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes">рекомендуют</a> к использованию Google и используют в Twitter и Taobao.
 </p>
 
-{% include ads.html %}
 <h3>Как работает</h3>
-<p>Автопрефиксер использует данные о популярности браузеров и поддержке ими вендорных префиксов. Опираясь на эту информацию, он расставляет и удаляет префиксы.</p>
+<p>
+	Автопрефиксер использует данные о популярности браузеров и поддержке ими вендорных префиксов. Опираясь на эту информацию, он расставляет и удаляет префиксы.
+	Автопрефиксер поможет вам с префиксами для: animations, transition, transform, grid, flex, flexbox и других.
+</p>
 
 <h3>Фильтр браузеров</h3>
 <p>Вы можете настроить какие браузеры учитывать в расставлении префиксов. Подробнее о синтаксисе в <a href="https://github.com/postcss/autoprefixer#browsers">документации</a>. Там же есть блок с <a href="https://github.com/postcss/autoprefixer#faq">вопросами и ответами</a>.</p>
 
-<p>{% include sharing-buttons.html %}</p>
+<h4>Большое спасибо</h4>
+<p>
+	<a href="https://github.com/ai">Андрею Ситнику</a>, автору <a href="https://github.com/postcss/postcss">PostCSS</a>, <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, <a href="https://github.com/ai/browserslist">browserslist</a> и других крутых инструментов.
+</p>
 
 {% include footer.html %}

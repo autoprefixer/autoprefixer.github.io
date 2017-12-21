@@ -2,8 +2,8 @@
 layout: default
 permalink: /
 lang: en
-title: Autoprefixer CSS online – make your vendor prefixes is actual
-description: Autoprefixer CSS online add the desired-vendor prefixes and remove unnecessary in your CSS. Auto, prefix, crossbrowser.
+title: Autoprefixer CSS online
+description: Autoprefixer is a PostCSS plugin which parse your CSS and add vendor prefixes
 ---
 
 {% include ads.html %}
@@ -13,18 +13,28 @@ description: Autoprefixer CSS online add the desired-vendor prefixes and remove 
 
 <p>You can also see which browsers you choose by filter string on <a class="js-link-browserlist" href="http://browserl.ist">browserl.ist</a></p>
 
+<p>{% include sharing-buttons.html %}</p>
+{% include ads.html %}
+
 <h2>What is it</h2>
 <p>
-	Autoprefixer is a service for managing vendor prefixes. It adds missing prefixes and deletes obsolete ones. It is <a href="https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes">recommended</a> by Google and used by Twitter and Taobao.
+	Autoprefixer online — web repl for original autorefixer. It parse your CSS and add vendor prefixes to CSS rules using values from Can I Use.
+	It is <a href="https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes">recommended</a> by Google and used by Twitter and Taobao.
 </p>
 
-{% include ads.html %}
 <h3>How does it work</h3>
-<p>The autoprefixer uses data on the popularity of browsers and support for vendor prefixes by browsers. Based on this information, it arranges and deletes the prefixes.</p>
+<p>
+	The autoprefixer uses data on the popularity of browsers and support for vendor prefixes by browsers. Based on this information, it arranges and deletes the prefixes.
+	It can help you want to get prefixes for: animations, transition, transform, grid, flex, flexbox and others.
+</p>
 
 <h3>Browser filter</h3>
 <p>You can configure which browsers to generate prefixes for in the distribution. More details on the syntax are in the <a href="https://github.com/postcss/autoprefixer#browsers">documentation<a>. There is also a block in the <a href="https://github.com/postcss/autoprefixer#faq">FAQ</a>.
 
-<p>{% include sharing-buttons.html %}</p>
+<h4>Big thanks</h4>
+<p>
+	To <a href="https://github.com/ai">Andrey Sitnik</a>, author of <a href="https://github.com/postcss/postcss">PostCSS</a>, <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, <a href="https://github.com/ai/browserslist">browserslist</a> and other awesome tools.
+</p>
+
 
 {% include footer.html %}
