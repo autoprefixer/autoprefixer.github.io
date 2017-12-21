@@ -1,20 +1,7 @@
-{% if page.lang == 'ru' %}
-    <div class="likely likely-big">
-        <button type="button" class="twitter" data-via="ymatuhin">Твитнуть</button>
-        <button type="button" class="facebook">Поделиться</button>
-        <button type="button" class="gplus">Плюсануть</button>
-        <button type="button" class="vkontakte">Поделиться</button>
-        <button type="button" class="telegram">Отправить</button>
-    </div>
-{% endif %}
-
-{% if page.lang == 'en' %}
-    <div class="likely likely-big">
-        <button type="button" class="twitter" data-via="ymatuhin">Tweet</button>
-        <button type="button" class="facebook">Share</button>
-        <button type="button" class="linkedin">Link</button>
-        <button type="button" class="gplus">Plus</button>
-        <button type="button" class="vkontakte">Share</button>
-        <button type="button" class="telegram">Send</button>
-    </div>
-{% endif %}
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"
+        async="async"></script>
+<div class="ya-share2"
+     data-services="vkontakte,facebook,gplus,twitter,evernote,pocket,telegram"
+     data-lang=""
+     data-counter="{% if page.lang == 'ru' %}ru{% else %}en{% endif %}"></div>
