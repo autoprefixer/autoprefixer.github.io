@@ -92,8 +92,8 @@ class App {
     }
 
     scrollSync(event) {
-        if (event.target === this.$leftPane) this.$rightPane.scrollTop = this.elems.left.scrollTop;
-        else this.elems.left.scrollTop = this.$rightPane.scrollTop;
+        if (event.target === this.$leftPane) this.$rightPane.scrollTop = this.$leftPane.scrollTop;
+        else this.$leftPane.scrollTop = this.$rightPane.scrollTop;
     }
 }
 
