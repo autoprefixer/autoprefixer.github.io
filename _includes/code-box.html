@@ -1,7 +1,14 @@
 <div class="textarea-box">
-	<textarea autofocus 
-		class="textarea textarea-left js-input" 
-		placeholder="/* Put your CSS code in the left column, instead of example, to add or remove unnecessary prefixes. */"></textarea>
+	<textarea autofocus
+			  class="textarea textarea-left js-input">{% if page.lang == 'ru' %}/* Вставьте ваш CSS сюда вместо этого примера */{% endif %}{% if page.lang == 'en' %}/* Paste your CSS here instead of this example */{% endif %}
 
-	<pre class="textarea textarea-right" contenteditable=""><code class="language-css js-output">/* Here is your CSS with the appropriate prefixes */</code></pre>
+.example {
+    display: flex;
+    transition: all .5s;
+    user-select: none;
+    background: linear-gradient(to bottom, white, black);
+}</textarea>
+
+<pre class="textarea textarea-right"
+		contenteditable=""><code class="language-css js-output"><strong>Loading...</strong></code></pre>
 </div>
