@@ -38,8 +38,6 @@ class App {
 
         this.$selectButton.addEventListener("click", this.selectResult.bind(this), false);
         this.$textFilter.addEventListener("keyup", this.updateBrowserListLink.bind(this), false);
-        this.$leftPane.addEventListener("scroll", this.scrollSync.bind(this), false);
-        this.$rightPane.addEventListener("scroll", this.scrollSync.bind(this), false);
     }
 
     runPrefixer() {
@@ -89,11 +87,6 @@ class App {
 
     updateBrowserListLink() {
         this.$browserListLink.href = encodeURI('http://browserl.ist/?q=' + this.$textFilter.value);
-    }
-
-    scrollSync(event) {
-        if (event.target === this.$leftPane) this.$rightPane.scrollTop = this.$leftPane.scrollTop;
-        else this.$leftPane.scrollTop = this.$rightPane.scrollTop;
     }
 }
 
