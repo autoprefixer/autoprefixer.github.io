@@ -1,6 +1,5 @@
 import store from 'store';
 import langRedirect from './redirect.js';
-import autoprefixer from './autoprefixer.min.js';
 import { highlightElement } from './highlight.js';
 
 const DEFAULT_BROWSERS = ["last 4 version"];
@@ -42,10 +41,10 @@ class App {
 
     runPrefixer() {
         const inputCSS = this.$leftPane.value;
-        const params = { browsers: this.browserList };
+        const params = { browsers: this.browserList, grid: true };
 
         try {
-            const compiled = autoprefixer.process(inputCSS, {}, params);
+            const compiled = window.autoprefixer.process(inputCSS, {}, params);
             this.$rightPane.innerHTML = this.textPrepare(compiled.css);
             highlightElement(this.$rightPane)
         } catch (error) {

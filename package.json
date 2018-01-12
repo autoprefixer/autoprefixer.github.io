@@ -9,6 +9,7 @@
     "start": "run-p start:*",
     "start:static": "jekyll server",
     "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets",
+    "prebuild:js": "./update-autoprefixer.sh",
     "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets"
   },
   "devDependencies": {
