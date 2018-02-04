@@ -1,3 +1,4 @@
+import './log2';
 import store from 'store';
 import langRedirect from './redirect.js';
 import { highlightElement } from './highlight.js';
