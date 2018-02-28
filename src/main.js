@@ -4,6 +4,16 @@ import langRedirect from './redirect.js';
 import { highlightElement } from './highlight.js';
 
 const DEFAULT_BROWSERS = ["last 4 version"];
+const getDefaultCss = (lang) => 
+`${lang === 'ru' ? '/* Вставьте ваш CSS сюда вместо этого примера */' : '/* Paste your CSS here instead of this example */'}
+
+.example {
+    display: grid;
+    transition: all .5s;
+    user-select: none;
+    background: linear-gradient(to bottom, white, black);
+}
+`
 
 class App {
     constructor() {
@@ -14,6 +24,9 @@ class App {
     vars() {
         this.browserList = store.get('autoprefixer:browsers') || DEFAULT_BROWSERS;
 
+        const query = new URLSearchParams(location.search);
+        this.defaultCss = query.get('code') || getDefaultCss(document.documentElement.lang)
+        
         this.$leftPane = document.querySelector(".js-input");
         this.$rightPane = document.querySelector(".js-output");
         this.$filterForm = document.querySelector(".js-filter");
@@ -25,6 +38,8 @@ class App {
     init() {
         this.$textFilter.value = this.browserList.join(', ');
         this.$leftPane.focus();
+
+        this.$leftPane.innerHTML = decodeURI(this.defaultCss);
 
         store.remove('browsers');
         this.listeners();
@@ -43,6 +58,10 @@ class App {
     runPrefixer() {
         const inputCSS = this.$leftPane.value;
         const params = { browsers: this.browserList, grid: true };
+
+        const query = new URLSearchParams()
+        query.set('code', inputCSS)
+        history.pushState('', '', `?${query.toString()}`)
 
         try {
             const compiled = window.autoprefixer.process(inputCSS, {}, params);
