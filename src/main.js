@@ -2,6 +2,8 @@ import './log2';
 import store from 'store';
 import langRedirect from './redirect.js';
 import { highlightElement } from './highlight.js';
+import postcss from 'postcss'
+import autoprefixer from 'autoprefixer'
 
 const DEFAULT_BROWSERS = ["last 4 version"];
 const getDefaultCss = (lang) => 
@@ -63,13 +65,17 @@ class App {
         query.set('code', inputCSS)
         history.pushState('', '', `?${query.toString()}`)
 
-        try {
-            const compiled = window.autoprefixer.process(inputCSS, {}, params);
-            this.$rightPane.innerHTML = this.textPrepare(compiled.css);
-            highlightElement(this.$rightPane)
-        } catch (error) {
-            this.$rightPane.innerHTML = this.textPrepare(error.toString());
-        }
+        postcss([
+            autoprefixer(params),
+        ])
+            .process(inputCSS)
+            .then(compiled => {
+                this.$rightPane.innerHTML = this.textPrepare(compiled.css);
+                highlightElement(this.$rightPane)
+            })
+            .catch(error => {
+                this.$rightPane.innerHTML = this.textPrepare(error.toString());
+            });
     }
 
     textPrepare(text = '') {
