@@ -24,10 +24,12 @@ class App {
     }
 
     vars() {
-        this.browserList = store.get('autoprefixer:browsers') || DEFAULT_BROWSERS;
-
         const query = new URLSearchParams(location.search);
-        this.defaultCss = query.get('code') || getDefaultCss(document.documentElement.lang)
+        const code = query.get('code');
+        const browsers = query.get('browsers');
+
+        this.browserList = (browsers && [browsers]) || store.get('autoprefixer:browsers') || DEFAULT_BROWSERS;
+        this.defaultCss = code || getDefaultCss(document.documentElement.lang)
         
         this.$leftPane = document.querySelector(".js-input");
         this.$rightPane = document.querySelector(".js-output");
@@ -61,9 +63,7 @@ class App {
         const inputCSS = this.$leftPane.value;
         const params = { browsers: this.browserList, grid: true };
 
-        const query = new URLSearchParams()
-        query.set('code', inputCSS)
-        history.pushState('', '', `?${query.toString()}`)
+        history.pushState('', '', `?${this.getQuery('code', inputCSS)}`)
 
         postcss([
             autoprefixer(params),
@@ -74,6 +74,7 @@ class App {
                 highlightElement(this.$rightPane)
             })
             .catch(error => {
+                console.log(error);
                 this.$rightPane.innerHTML = this.textPrepare(error.toString());
             });
     }
@@ -111,7 +112,15 @@ class App {
     }
 
     updateBrowserListLink() {
-        this.$browserListLink.href = encodeURI('http://browserl.ist/?q=' + this.$textFilter.value);
+        this.$browserListLink.href = `http://browserl.ist/?q=${encodeURI(this.$textFilter.value)}`;
+
+        history.pushState('', '', `?${this.getQuery('browsers', this.$textFilter.value)}`)
+    }
+
+    getQuery(key, value) {
+        const query = new URLSearchParams(location.search.replace(/^\?/, ''));
+        query.set(key, value);
+        return query.toString();
     }
 }
 
