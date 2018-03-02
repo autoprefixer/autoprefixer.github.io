@@ -3,7 +3,9 @@ import store from 'store';
 import langRedirect from './redirect.js';
 import { highlightElement } from './highlight.js';
 import postcss from 'postcss'
+import { version as postcssVersion } from 'postcss/package.json'
 import autoprefixer from 'autoprefixer'
+import { version as autoprefixerVersion } from 'autoprefixer/package.json'
 
 const DEFAULT_BROWSERS = ["last 4 version"];
 const getDefaultCss = (lang) => 
@@ -37,6 +39,7 @@ class App {
         this.$textFilter = document.querySelector(".js-browsers-filter")
         this.$browserListLink = document.querySelector(".js-link-browserlist")
         this.$selectButton = document.querySelector(".js-select");
+        this.$version = document.querySelector('.js-version')
     }
 
     init() {
@@ -49,6 +52,11 @@ class App {
         this.listeners();
         this.updateBrowserListLink();
         this.runPrefixer();
+        this.addVersion();
+    }
+
+    addVersion() {
+        this.$version.innerHTML = `Postcss version: ${postcssVersion}\nAutoprefixer version: ${autoprefixerVersion}`
     }
 
     listeners() {
