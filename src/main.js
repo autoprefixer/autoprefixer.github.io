@@ -1,9 +1,11 @@
-import './log2';
 import store from 'store';
 import langRedirect from './redirect.js';
 import { highlightElement } from './highlight.js';
-
-const DEFAULT_BROWSERS = ["last 4 version"];
+import { version as postcssVersion } from 'postcss/package.json'
+import { version as autoprefixerVersion } from 'autoprefixer/package.json'
+import postcss from 'postcss'
+import autoprefixer from 'autoprefixer'
+import { CSS_EXAMPLE, DEFAULT_BROWSERS } from './config';
 
 class App {
     constructor() {
@@ -13,23 +15,29 @@ class App {
 
     vars() {
         this.browserList = store.get('autoprefixer:browsers') || DEFAULT_BROWSERS;
-
         this.$leftPane = document.querySelector(".js-input");
         this.$rightPane = document.querySelector(".js-output");
         this.$filterForm = document.querySelector(".js-filter");
         this.$textFilter = document.querySelector(".js-browsers-filter")
         this.$browserListLink = document.querySelector(".js-link-browserlist")
         this.$selectButton = document.querySelector(".js-select");
+        this.$version = document.querySelector('.js-version')
     }
 
     init() {
         this.$textFilter.value = this.browserList.join(', ');
+        this.$leftPane.innerHTML = CSS_EXAMPLE;
         this.$leftPane.focus();
 
         store.remove('browsers');
         this.listeners();
         this.updateBrowserListLink();
         this.runPrefixer();
+        this.addVersion();
+    }
+
+    addVersion() {
+        this.$version.innerHTML = `Postcss: <b>v${postcssVersion}</b>, autoprefixer: <b>v${autoprefixerVersion}</b>`;
     }
 
     listeners() {
@@ -44,13 +52,18 @@ class App {
         const inputCSS = this.$leftPane.value;
         const params = { browsers: this.browserList, grid: true };
 
-        try {
-            const compiled = window.autoprefixer.process(inputCSS, {}, params);
-            this.$rightPane.innerHTML = this.textPrepare(compiled.css);
-            highlightElement(this.$rightPane)
-        } catch (error) {
-            this.$rightPane.innerHTML = this.textPrepare(error.toString());
-        }
+        postcss([
+            autoprefixer(params),
+        ])
+            .process(inputCSS)
+            .then(compiled => {
+                this.$rightPane.innerHTML = this.textPrepare(compiled.css);
+                highlightElement(this.$rightPane)
+            })
+            .catch(error => {
+                console.log(error);
+                this.$rightPane.innerHTML = this.textPrepare(error.toString());
+            });
     }
 
     textPrepare(text = '') {
@@ -86,8 +99,9 @@ class App {
     }
 
     updateBrowserListLink() {
-        this.$browserListLink.href = encodeURI('http://browserl.ist/?q=' + this.$textFilter.value);
+        this.$browserListLink.href = `http://browserl.ist/?q=${encodeURI(this.$textFilter.value)}`;
     }
 }
 
-if (!langRedirect()) new App();
+const redirectResult = langRedirect();
+if (!redirectResult) new App();

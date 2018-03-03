@@ -1,3 +1,8 @@
 {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "files.exclude": {
+        "_site": true,
+        ".cache": true,
+        ".vscode": true,
+    }
 }
