@@ -9,7 +9,6 @@
     "start": "run-p start:*",
     "start:static": "jekyll server",
     "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets",
-    "prebuild:js": "./update-autoprefixer.sh",
     "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets"
   },
   "devDependencies": {
@@ -19,8 +18,10 @@
     "parcel-bundler": "^1.3.0"
   },
   "dependencies": {
+    "autoprefixer": "^8.0.0",
     "babel-runtime": "^6.26.0",
     "highlight.js": "^9.12.0",
+    "postcss": "^6.0.19",
     "store": "^2.0.12"
   }
 }
