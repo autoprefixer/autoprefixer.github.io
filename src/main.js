@@ -1,23 +1,11 @@
-import './log2';
 import store from 'store';
 import langRedirect from './redirect.js';
 import { highlightElement } from './highlight.js';
-import postcss from 'postcss'
 import { version as postcssVersion } from 'postcss/package.json'
-import autoprefixer from 'autoprefixer'
 import { version as autoprefixerVersion } from 'autoprefixer/package.json'
-
-const DEFAULT_BROWSERS = ["last 4 version"];
-const getDefaultCss = (lang) => 
-`${lang === 'ru' ? '/* Вставьте ваш CSS сюда вместо этого примера */' : '/* Paste your CSS here instead of this example */'}
-
-.example {
-    display: grid;
-    transition: all .5s;
-    user-select: none;
-    background: linear-gradient(to bottom, white, black);
-}
-`
+import postcss from 'postcss'
+import autoprefixer from 'autoprefixer'
+import { CSS_EXAMPLE, DEFAULT_BROWSERS } from './config';
 
 class App {
     constructor() {
@@ -26,13 +14,7 @@ class App {
     }
 
     vars() {
-        const query = new URLSearchParams(location.search);
-        const code = query.get('code');
-        const browsers = query.get('browsers');
-
-        this.browserList = (browsers && [browsers]) || store.get('autoprefixer:browsers') || DEFAULT_BROWSERS;
-        this.defaultCss = code || getDefaultCss(document.documentElement.lang)
-        
+        this.browserList = store.get('autoprefixer:browsers') || DEFAULT_BROWSERS;
         this.$leftPane = document.querySelector(".js-input");
         this.$rightPane = document.querySelector(".js-output");
         this.$filterForm = document.querySelector(".js-filter");
@@ -44,9 +26,8 @@ class App {
 
     init() {
         this.$textFilter.value = this.browserList.join(', ');
+        this.$leftPane.innerHTML = CSS_EXAMPLE;
         this.$leftPane.focus();
-
-        this.$leftPane.innerHTML = decodeURI(this.defaultCss);
 
         store.remove('browsers');
         this.listeners();
@@ -56,7 +37,7 @@ class App {
     }
 
     addVersion() {
-        this.$version.innerHTML = `Postcss version: ${postcssVersion}\nAutoprefixer version: ${autoprefixerVersion}`
+        this.$version.innerHTML = `Postcss: <b>v${postcssVersion}</b>, autoprefixer: <b>v${autoprefixerVersion}</b>`;
     }
 
     listeners() {
@@ -70,8 +51,6 @@ class App {
     runPrefixer() {
         const inputCSS = this.$leftPane.value;
         const params = { browsers: this.browserList, grid: true };
-
-        history.pushState('', '', `?${this.getQuery('code', inputCSS)}`)
 
         postcss([
             autoprefixer(params),
@@ -121,15 +100,8 @@ class App {
 
     updateBrowserListLink() {
         this.$browserListLink.href = `http://browserl.ist/?q=${encodeURI(this.$textFilter.value)}`;
-
-        history.pushState('', '', `?${this.getQuery('browsers', this.$textFilter.value)}`)
-    }
-
-    getQuery(key, value) {
-        const query = new URLSearchParams(location.search.replace(/^\?/, ''));
-        query.set(key, value);
-        return query.toString();
     }
 }
 
-if (!langRedirect()) new App();
+const redirectResult = langRedirect();
+if (!redirectResult) new App();

@@ -71,8 +71,10 @@ a:visited:hover {
 }
 
 .textarea-box {
+  position: relative;
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
 
   @media (max-width: 920px) {
     flex-direction: column;
@@ -138,5 +140,11 @@ textarea,
 }
 
 .version {
-  white-space: pre-line;
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  margin: 0;
+  padding-bottom: 5px;
+  color: rgba(0, 0, 0, .5);
+  font-size: 80%;
 }
