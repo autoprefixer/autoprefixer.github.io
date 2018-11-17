@@ -20,7 +20,7 @@
     "parcel-bundler": "^1.10.3"
   },
   "dependencies": {
-    "autoprefixer": "^9.2.1",
+    "autoprefixer": "^9.3.1",
     "babel-runtime": "^6.26.0",
     "highlight.js": "^9.13.1",
     "postcss": "^7.0.5",
