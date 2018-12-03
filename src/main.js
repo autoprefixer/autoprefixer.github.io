@@ -50,7 +50,7 @@ class App {
 
     runPrefixer() {
         const inputCSS = this.$leftPane.value;
-        const params = { browsers: this.browserList, grid: true };
+        const params = { browsers: this.browserList, grid: "autoplace" };
 
         postcss([
             autoprefixer(params),
