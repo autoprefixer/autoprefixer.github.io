@@ -10,7 +10,7 @@
     "start": "run-p start:*",
     "start:static": "bundle exec jekyll server",
     "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets",
-    "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets"
+    "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -20,10 +20,10 @@
     "parcel-bundler": "^1.10.3"
   },
   "dependencies": {
-    "autoprefixer": "^9.4.0",
+    "autoprefixer": "^9.6.1",
     "babel-runtime": "^6.26.0",
     "highlight.js": "^9.13.1",
-    "postcss": "^7.0.6",
+    "postcss": "^7.0.17",
     "store": "^2.0.12"
   }
 }
