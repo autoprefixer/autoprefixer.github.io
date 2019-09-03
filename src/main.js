@@ -99,7 +99,7 @@ class App {
     }
 
     updateBrowserListLink() {
-        this.$browserListLink.href = `http://browserl.ist/?q=${encodeURI(this.$textFilter.value)}`;
+        this.$browserListLink.href = `https://browserl.ist/?q=${encodeURI(this.$textFilter.value)}`;
     }
 }
 
