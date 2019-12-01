@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 h1,
@@ -53,7 +54,8 @@ a:visited:hover {
   height: 10em;
   border: 0;
   background: #f5f5f5;
-  box-shadow: 0 0 0 1px #ddd;
+  -webkit-box-shadow: 0 0 0 1px #ddd;
+          box-shadow: 0 0 0 1px #ddd;
   font-family: 'Fira Code', 'Operator Mono', Consolas, Monaco, 'Andale Mono',
     monospace;
   resize: none;
@@ -71,18 +73,29 @@ a:visited:hover {
 
 .textarea-box {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-top: 10px;
 
   @media (max-width: 920px) {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
 .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 1em 0;
 
   &__right {
@@ -91,11 +104,18 @@ a:visited:hover {
 }
 
 .settings__version {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+          align-items: center;
+      -ms-flex-align: center;
   padding-top: 6px;
 
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 
   input {
     margin-right: 6px;
@@ -103,8 +123,11 @@ a:visited:hover {
 }
 
 .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .select {
@@ -112,8 +135,12 @@ a:visited:hover {
 }
 
 .logo_and_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+          align-items: center;
+      -ms-flex-align: center;
   padding: 1.5em 0;
 
   img {
@@ -134,7 +161,8 @@ a:visited:hover {
   height: 32px;
   border: 0;
   background: #f5f5f5;
-  box-shadow: 0 0 0 1px #ddd;
+  -webkit-box-shadow: 0 0 0 1px #ddd;
+          box-shadow: 0 0 0 1px #ddd;
 }
 
 .filter {
@@ -149,7 +177,8 @@ a:visited:hover {
     padding-left: 0.5em;
     height: 32px;
     border: 0;
-    box-shadow: 0 0 0 1px #ddd;
+    -webkit-box-shadow: 0 0 0 1px #ddd;
+            box-shadow: 0 0 0 1px #ddd;
   }
 }
 
@@ -174,26 +203,47 @@ textarea,
 }
 
 .github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
+  -webkit-animation: octocat-wave 560ms ease-in-out;
+          animation: octocat-wave 560ms ease-in-out;
+}
+
+@-webkit-keyframes octocat-wave {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  20%, 60% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  40%, 80% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
 }
 
 @keyframes octocat-wave {
   0%, 100% {
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   20%, 60% {
-    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
   }
   40%, 80% {
-    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
 }
 
 @media (max-width: 500px) {
   .github-corner:hover .octo-arm {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
   }
   .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
+    -webkit-animation: octocat-wave 560ms ease-in-out;
+            animation: octocat-wave 560ms ease-in-out;
   }
 }
