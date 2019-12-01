@@ -14,8 +14,8 @@ class App {
     }
 
     vars() {
-        this.browserList = store.get('autoprefixer:browsers') || DEFAULT_BROWSERS;
-        this.withComments = !!store.get('autoprefixer:withComments');
+        this.browserList = store.get('autoprefixer:browsers', DEFAULT_BROWSERS);
+        this.withComments = store.get('autoprefixer:withComments', true);
         this.$leftPane = document.querySelector(".js-input");
         this.$rightPane = document.querySelector(".js-output");
         this.$filterForm = document.querySelector(".js-filter");
