@@ -9,7 +9,7 @@
     "postinstall": "bundle install",
     "start": "run-p start:*",
     "start:static": "bundle exec jekyll server",
-    "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets",
+    "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps",
     "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps"
   },
   "devDependencies": {

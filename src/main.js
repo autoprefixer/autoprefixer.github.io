@@ -15,6 +15,7 @@ class App {
 
     vars() {
         this.browserList = store.get('autoprefixer:browsers') || DEFAULT_BROWSERS;
+        this.withComments = !!store.get('autoprefixer:withComments');
         this.$leftPane = document.querySelector(".js-input");
         this.$rightPane = document.querySelector(".js-output");
         this.$filterForm = document.querySelector(".js-filter");
@@ -22,14 +23,15 @@ class App {
         this.$browserListLink = document.querySelector(".js-link-browserlist")
         this.$selectButton = document.querySelector(".js-select");
         this.$version = document.querySelector('.js-version')
+        this.$comment = document.querySelector('.js-comment')
     }
 
     init() {
         this.$textFilter.value = this.browserList.join(', ');
         this.$leftPane.innerHTML = CSS_EXAMPLE;
         this.$leftPane.focus();
+        this.$comment.checked = this.withComments;
 
-        store.remove('browsers');
         this.listeners();
         this.updateBrowserListLink();
         this.runPrefixer();
@@ -46,6 +48,7 @@ class App {
 
         this.$selectButton.addEventListener("click", this.selectResult.bind(this), false);
         this.$textFilter.addEventListener("keyup", this.updateBrowserListLink.bind(this), false);
+        this.$comment.addEventListener("change", this.toggleComment.bind(this), false);
     }
 
     runPrefixer() {
@@ -57,7 +60,16 @@ class App {
         ])
             .process(inputCSS)
             .then(compiled => {
-                this.$rightPane.innerHTML = this.textPrepare(compiled.css);
+                let html = ''
+
+                if (this.withComments) {
+                    html += `/* prefixed by https://autoprefixer.github.io (PostCSS: v${postcssVersion}, autoprefixer: v${autoprefixerVersion}) */`;
+                    html += `\n\n`;
+                }
+
+                html += this.textPrepare(compiled.css);
+
+                this.$rightPane.innerHTML = html;
                 highlightElement(this.$rightPane)
             })
             .catch(error => {
@@ -80,6 +92,13 @@ class App {
         this.browserList = newValue;
         store.set('autoprefixer:browsers', newValue)
         this.runPrefixer();
+    }
+
+    toggleComment(event) {
+        const {checked} = event.target;
+        this.runPrefixer();
+        this.withComments = checked;
+        store.set('autoprefixer:withComments', checked);
     }
 
     selectResult() {
