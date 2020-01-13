@@ -6,7 +6,6 @@
   "author": "ymatuhin <ym@ymatuhin.ru>",
   "license": "MIT",
   "scripts": {
-    "postinstall": "bundle install",
     "start": "run-p start:*",
     "start:static": "bundle exec jekyll server",
     "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps",
