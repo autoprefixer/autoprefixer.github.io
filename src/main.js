@@ -42,6 +42,17 @@ class App {
         this.$version.innerHTML = `Postcss: <b>v${postcssVersion}</b>, autoprefixer: <b>v${autoprefixerVersion}</b>`;
     }
 
+    generateOutputComment() {
+        return `/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v${postcssVersion},
+* Autoprefixer: v${autoprefixerVersion}
+* Browsers: ${this.browserList}
+*/
+
+`;
+    }
+
     listeners() {
         this.$leftPane.addEventListener("keyup", this.runPrefixer.bind(this), false);
         this.$filterForm.addEventListener("submit", this.filterUpdate.bind(this), false);
@@ -62,10 +73,8 @@ class App {
             .then(compiled => {
                 let html = ''
 
-                if (this.withComments) {
-                    html += `/* prefixed by https://autoprefixer.github.io (PostCSS: v${postcssVersion}, autoprefixer: v${autoprefixerVersion}) */`;
-                    html += `\n\n`;
-                }
+                if (this.withComments)
+                    html += this.generateOutputComment()
 
                 html += this.textPrepare(compiled.css);
 

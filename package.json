@@ -8,8 +8,9 @@
   "scripts": {
     "start": "run-p start:*",
     "start:static": "bundle exec jekyll server",
-    "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps",
-    "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps"
+    "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps --no-cache",
+    "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps --no-cache",
+    "postinstall": "bundle install"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -19,10 +20,10 @@
     "parcel-bundler": "^1.10.3"
   },
   "dependencies": {
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.7.6",
     "babel-runtime": "^6.26.0",
-    "highlight.js": "^9.13.1",
-    "postcss": "^7.0.17",
+    "highlight.js": "^10.0.2",
+    "postcss": "^7.0.29",
     "store": "^2.0.12"
   }
 }
