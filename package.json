@@ -1,29 +1,25 @@
 {
-  "name": "autoprefixer_online",
+  "name": "autoprefixer-online",
   "version": "1.0.0",
-  "main": "./src/main.js",
-  "repository": "git@github.com:autoprefixer/autoprefixer.github.io.git",
-  "author": "ymatuhin <ym@ymatuhin.ru>",
-  "license": "MIT",
   "scripts": {
-    "start": "run-p start:*",
-    "start:static": "bundle exec jekyll server",
-    "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps --no-cache",
-    "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps --no-cache",
-    "postinstall": "bundle install"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.10.3"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.6",
-    "babel-runtime": "^6.26.0",
-    "highlight.js": "^10.0.2",
-    "postcss": "^7.0.29",
-    "store": "^2.0.12"
-  }
+    "@ymatuhin/ui": "../@ymatuhin/ui",
+    "@ymatuhin/utils": "../@ymatuhin/utils",
+    "lodash": "^4.17.20",
+    "next": "latest",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.21",
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "typescript": "4.0"
+  },
+  "license": "MIT"
 }

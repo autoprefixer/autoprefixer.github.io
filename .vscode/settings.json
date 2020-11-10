@@ -4,5 +4,7 @@
         "_site": true,
         ".cache": true,
         ".vscode": true,
+        ".next": true,
+        "yarn.lock": true,
     }
 }
