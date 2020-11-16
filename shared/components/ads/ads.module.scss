@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.root {
+  display: flex;
+
+  &[data-type="leaderboard"] { max-height: 100px; }
+
+  &[data-valign="left"] { align-items: flex-start; }
+  &[data-valign="right"] { align-items: flex-end;}
+  &[data-valign="center"] { align-items: center; }
+
+  &[data-halign="left"] { justify-content: flex-start;}
+  &[data-halign="right"] { justify-content: flex-end; }
+  &[data-halign="center"] { justify-content: center; }
+}

@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.root {
+  margin: 0 auto;
+  max-width: 100%;
+}
+.size-small {
+  width: $container-small;
+}
+.size-medium {
+  width: $container-medium;
+}
+.size-large {
+  width: $container-large;
+}

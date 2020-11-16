@@ -1,0 +1,45 @@
+.header {
+  margin-top: $lh * 2;
+  margin-bottom: $lh;
+
+  &__logo-aligner {
+    position: relative;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-right: $lh;
+    transform: translateY(-50%);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__sub-title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+    opacity: 0.5;
+  }
+}
+
+footer {
+  margin-top: $lh * 4;
+  font-size: 18px;
+}
+
+.keywords {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+  opacity: 0.25;
+}
+
+.warning {
+  padding: $lh/2 $lh;
+  // border-left: 8px solid rgba(241, 196, 15, 0.5);
+  background: rgba(241, 196, 15, 0.2);
+}

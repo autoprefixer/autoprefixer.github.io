@@ -1,0 +1,36 @@
+@import '../styles/variables.scss';
+
+// Begin: Sticky footer
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - #{$document-offset * 4});
+}
+
+.content {
+  flex: 1;
+}
+// End: Sticky footer
+
+.adsLeft,
+.adsRight {
+  position: fixed;
+  top: #{$document-offset * 2};
+  bottom: #{$document-offset * 2};
+
+  @media (max-width: #{$container-large + $document-offset * 4 + $ads-vertical-min-size * 2 + $ads-content-offset * 2}) {
+    display: none;
+  }
+}
+
+.adsLeft {
+  right: calc(50vw + #{$container-large/2} + #{$ads-content-offset});
+  left: #{$document-offset * 2};
+}
+
+.adsRight {
+  right: #{$document-offset * 2};
+  left: calc(50vw + #{$container-large/2} + #{$ads-content-offset});
+}
+
+.footer {}

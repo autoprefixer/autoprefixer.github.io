@@ -2,24 +2,38 @@
   "name": "autoprefixer-online",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "NO_COLOR=true next",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc"
   },
   "dependencies": {
+    "@types/autoprefixer": "^9.7.2",
+    "@types/classnames": "^2.2.11",
+    "@types/diff": "^4.0.2",
+    "@types/highlight.js": "^10.1.0",
     "@ymatuhin/ui": "../@ymatuhin/ui",
     "@ymatuhin/utils": "../@ymatuhin/utils",
+    "autoprefixer": "^10.0.2",
+    "classnames": "^2.2.6",
+    "diff": "^5.0.0",
+    "flatry": "^1.0.12",
+    "highlight.js": "^10.3.2",
     "lodash": "^4.17.20",
     "next": "latest",
+    "postcss": "8.1.7",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "sass": "^1.29.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "typescript": "4.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.1.7"
   },
   "license": "MIT"
 }
