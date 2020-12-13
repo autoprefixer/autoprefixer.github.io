@@ -1,0 +1,47 @@
+---
+layout: default
+permalink: /
+lang: fr
+title: Autoprefixer CSS en ligne
+description: Autoprefixer est un plugin PostCSS qui parse votre CSS et ajoute des préfixes vendeurs
+---
+
+{% include ads.html %}
+{% include title.html %}
+{% include code-box.html %}
+{% include filter.html %}
+
+<p>Vous pouvez aussi voir quels navigateurs vous choisissez avec le filtre sur <a class="js-link-browserlist" href="https://browserl.ist/">browserl.ist</a></p>
+
+{% include sharing-buttons.html %}
+<br><br>
+{% include ads_yandex.html %}
+
+<h2>Qu'est-ce que c'est</h2>
+<p>
+	Autoprefixer en ligne — web repl pour Autoprefixer. Parse votre CSS et ajoute les préfixes vendeurs aux règles CSS à partir de <a href="https://caniuse.com/">Can I Use</a>.
+	Autoprefixer est <a href="https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes">recommandé</a> par Google et utilisé par Twitter et Taobao.
+</p>
+
+<h3>Comment ça marche</h3>
+<p>
+	Autoprefixer utilise des données sur la popularité des navigateurs et leur support pour les préfixes vendeurs. À partir de ces informations, il arrange et supprime les préfixes.
+	Il peut vous aider à avoir des préfixes pour: les animations, les transitions, transform, grid, flex, flexbox et autres.
+</p>
+
+<h3>Filtrage des navigateurs</h3>
+<p>
+	Vous pouvez configurer pour quels navigateurs il faut générer les préfixes dans la distribution. Plus de détails sur la syntaxe dans la <a href="https://github.com/postcss/autoprefixer#browsers">documentation</a>. Il y en a aussi dans la <a href="https://github.com/postcss/autoprefixer#faq">FAQ</a>.
+</p>
+
+<h3>Options</h3>
+<p>
+	Le polyfill pour la mise en page des grid IE est activé, ce qui n'est pas le cas <a href="https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie">par défaut</a> dans Autoprefixer.
+</p>
+
+<h4>Merci</h4>
+<p>
+	À <a href="https://github.com/ai">Andrey Sitnik</a>, créateur de <a href="https://github.com/postcss/postcss">PostCSS</a>, <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, <a href="https://github.com/ai/browserslist">browserslist</a> et d'autres super outils.
+</p>
+
+{% include footer.html %}
