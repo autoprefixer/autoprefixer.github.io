@@ -13,6 +13,12 @@
 			<br>
 			2017 © <a href="{{ site.url }}/">Autoprefixer Online</a> by <a href="https://ymatuhin.ru/">ymatuhin</a>
 		{% endif %}
+		
+		{% if page.lang == 'fr' %}
+			Autoprefixer en ligne, aussi nommé: prefixer, générateur de préfixes, générateur de css cross browser, générateur de préfixes vendeurs
+			<br>
+			2017 © <a href="{{ site.url }}/">Autoprefixer en ligne</a> par <a href="https://ymatuhin.ru/">ymatuhin</a>
+		{% endif %}
 
 		&nbsp; / &nbsp;
 		{% if page.lang != 'ru' %}
@@ -21,6 +27,10 @@
 
 		{% if page.lang != 'en' %}
 			<a href="/">In English</a>
+		{% endif %}
+		
+		{% if page.lang != 'fr' %}
+			<a href="/">En Français</a>
 		{% endif %}
 	</small>
 </section>
