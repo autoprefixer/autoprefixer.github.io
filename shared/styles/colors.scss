@@ -1,0 +1,46 @@
+@use "sass:color";
+@import "./variables";
+
+$color-theme: #fca311 !default;
+$color-theme-saturate: 10% !default;
+
+// $color-moon: #f8ae4f !default;
+// $color-accent: #8889e2 !default;
+// $color-critic: #f74545 !default;
+// $color-warning: #f8ae4f !default;
+// $color-success: #27ae60 !default;
+
+:root {
+  $color-text-1: color.change($color-theme, $lightness: 10%, $saturation: $color-theme-saturate);
+  $color-text-2: color.change($color-theme, $lightness: 20%, $saturation: $color-theme-saturate);
+  $color-text-3: color.change($color-theme, $lightness: 30%, $saturation: $color-theme-saturate);
+  $color-back-1: color.change($color-theme, $lightness: 94%, $saturation: $color-theme-saturate);
+  $color-back-2: color.change($color-theme, $lightness: 90%, $saturation: $color-theme-saturate);
+  $color-back-3: color.change($color-theme, $lightness: 86%, $saturation: $color-theme-saturate);
+  --color-text-0: #000;
+  --color-text-1: #{$color-text-1};
+  --color-text-2: #{$color-text-2};
+  --color-text-3: #{$color-text-3};
+  --color-back-0: #fff;
+  --color-back-1: #{$color-back-1};
+  --color-back-2: #{$color-back-2};
+  --color-back-3: #{$color-back-3};
+  --color-theme: #{$color-theme};
+  // --color-moon: #{$color-moon};
+  // --color-accent: #8889e2;
+  // --color-pane: #fff;
+}
+
+:root[dark-mode="true"] {
+  $color-theme: color.scale($color-theme, $lightness: 10%);
+  $color-text: color.change($color-theme, $lightness: 90%, $saturation: $color-theme-saturate);
+  $color-back: color.change($color-theme, $lightness: 8%, $saturation: $color-theme-saturate);
+  // $color-moon: color.scale($color-moon, $lightness: 10%);
+  --color-theme: #{$color-theme};
+  --color-text: #{$color-text};
+  --color-back: #{$color-back};
+  --color-back-0: #000;
+  // --color-moon: #{$color-moon};
+  // --color-pane: #555;
+  // --color-accent: #8889e2;
+}

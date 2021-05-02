@@ -1,0 +1,18 @@
+$color-theme: #dd3735;
+
+@import '../shared/styles/index.scss';
+
+.added, .deleted {
+  margin-right: -$font-size;
+  margin-left: -$font-size;
+  padding-right: $font-size;
+  padding-left: $font-size;
+}
+
+.added {
+  background: green;
+}
+
+.deleted {
+  background: red;
+}

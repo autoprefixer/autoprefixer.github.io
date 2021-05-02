@@ -1,0 +1,46 @@
+@import '../../../shared/styles/variables.scss';
+
+.root {
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  min-height: 480px;
+  height: 60vh;
+  border: 1px solid var(--color-back-3);
+  border-radius: 5px;
+}
+
+.input {
+  border-right: 1px solid var(--color-back-3);
+}
+
+.input,
+.output {
+  position: relative;
+  width: 50%;
+  // background: var(--color-back-0);
+  font-family: $font-mono;
+  transition: all .3s $easing;
+
+  &:focus {
+    // For focus outline always visible
+    position: relative;
+    z-index: 5;
+    flex: 3;
+
+    @media #{$desktop} {
+      flex: 2;
+    }
+  }
+}
+
+// .input {
+//   border-right-width: 0;
+//   border-top-left-radius: 5px;
+//   border-bottom-left-radius: 5px;
+// }
+
+// .output {
+//   border-top-right-radius: 5px;
+//   border-bottom-right-radius: 5px;
+// }

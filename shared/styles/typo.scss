@@ -1,0 +1,112 @@
+@use "sass:math";
+
+// .hero,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-heading);
+  font-family: $font-heading;
+}
+
+b,
+strong {
+  color: var(--color-heading);
+  font-family: $font-heading;
+}
+
+// .hero {
+//   font-size: 1rem * math.pow($heading-mobile-scale, 6);
+//   line-height: 0.9;
+
+//   @media #{$desktop} {
+//     font-size: 1rem * math.pow($heading-desktop-scale, 6);
+//   }
+// }
+h1 {
+  font-weight: 800;
+  font-size: 1rem * math.pow($heading-mobile-scale, 5);
+  line-height: 0.95;
+
+  @media #{$desktop} {
+    font-size: 1rem * math.pow($heading-desktop-scale, 5);
+  }
+}
+h2 {
+  font-size: 1rem * math.pow($heading-mobile-scale, 4);
+  line-height: 1;
+
+  @media #{$desktop} {
+    font-size: 1rem * math.pow($heading-desktop-scale, 4);
+  }
+}
+h3 {
+  font-size: 1rem * math.pow($heading-mobile-scale, 3);
+  line-height: 1.1;
+
+  @media #{$desktop} {
+    font-size: 1rem * math.pow($heading-desktop-scale, 3);
+  }
+}
+h4 {
+  font-size: 1rem * math.pow($heading-mobile-scale, 2);
+  line-height: 1.2;
+
+  @media #{$desktop} {
+    font-size: 1rem * math.pow($heading-desktop-scale, 2);
+  }
+}
+h5 {
+  font-size: 1rem * $heading-mobile-scale;
+
+  @media #{$desktop} {
+    font-size: 1rem * $heading-desktop-scale;
+  }
+}
+
+p {
+  margin: 0 0 $lh;
+  border: 0;
+}
+
+.text-lead {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  color: var(--color-theme);
+  text-decoration: none;
+}
+
+// hr {
+//   margin: 1rem 0;
+//   height: 1px;
+//   border: 0;
+//   background: var(--color-adaptive-light-4);
+// }
+
+// blockquote {
+//   position: relative;
+//   padding: 0 0 0 1.25rem;
+//   border-left: 0.4rem solid var(--color-brand);
+// }
+
+// pre {
+//   margin: 0;
+//   padding: 0.75rem 1.25rem;
+//   border: 1px solid var(--color-adaptive-light-4);
+//   border-radius: $radius-medium;
+//   background: var(--color-adaptive-light-2);
+//   white-space: pre-wrap;
+//   word-wrap: normal;
+//   font-size: 0.85rem;
+// }

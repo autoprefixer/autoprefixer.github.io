@@ -1,0 +1,31 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+
+$desktop: "(min-width: 768px)" !default;
+
+$font-base:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-mono: monospace !default;
+$font-heading: $font-base !default;
+
+$font-size: 20px !default;
+$font-size-mobile: 18px !default;
+$line-height: 1.4 !default;
+$lh: $font-size * $line-height;
+
+$heading-desktop-scale: 1.25 !default;
+$heading-mobile-scale: 1.15 !default;
+
+$container-interval: 242px !default;
+$container-small: 728px !default;
+$container-medium: $container-small + $container-interval !default;
+$container-large: $container-medium + $container-interval !default;
+
+$document-offset: $font-size;
+$ads-content-offset: $document-offset;
+$ads-vertical-min-size: 120px !default;
+$ads-vertical-max-size: 326px !default;
+
+$logo-size-desktop: ($container-medium - $container-small)/2 - $document-offset !default;
+$logo-size-mobile: 80px !default;
+
+$easing: cubic-bezier(0.77, 0, 0.175, 1);

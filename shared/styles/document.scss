@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--color-text);
+  font-size: $font-size-mobile;
+  font-family: $font-base;
+  line-height: $line-height;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media #{$desktop} {
+    font-size: $font-size;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-back-0);
+}
+
+html, body {
+  height: 100%;
+}
+
+#__next {
+  padding: $document-offset;
+  min-height: 100%;
+  border: $document-offset solid var(--color-back-0);
+  background: var(--color-back-1);
+
+  // @media #{$desktop} {
+  //   border-width: $document-offset;
+  // }
+}
+
+button,
+textarea,
+input {
+  color: inherit;
+  font: inherit;
+}
+
+label {
+  user-select: none;
+}
