@@ -2,7 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   autoprefixer: ^10.3.1
-  highlight.js: ^10.0.2
   modern-normalize: ^1.1.0
   npm-run-all: ^4.1.5
   postcss: ^8.3.6
@@ -13,7 +12,6 @@ specifiers:
 
 dependencies:
   autoprefixer: 10.3.1_postcss@8.3.6
-  highlight.js: 10.7.3
   modern-normalize: 1.1.0
   postcss: 8.3.6
   prismjs: 1.24.1
@@ -280,10 +278,6 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
-
-  /highlight.js/10.7.3:
-    resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
-    dev: false
 
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
