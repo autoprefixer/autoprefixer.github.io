@@ -6,24 +6,22 @@
   "author": "ymatuhin <ym@ymatuhin.ru>",
   "license": "MIT",
   "scripts": {
-    "start": "run-p start:*",
-    "start:static": "bundle exec jekyll server",
-    "start:js": "parcel watch ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps --no-cache",
-    "build:js": "parcel build ./src/main.js --out-dir ./assets --public-url /assets --no-source-maps --no-cache",
-    "postinstall": "bundle install"
+    "start": "npm run build",
+    "build": "rm -rf ./docs/** && vite build",
+    "dev": "vite",
+    "preview": "http-server ./docs"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.10.3"
+    "sass": "^1.36.0",
+    "vite": "^2.4.3"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.6",
-    "babel-runtime": "^6.26.0",
+    "autoprefixer": "^10.3.1",
     "highlight.js": "^10.0.2",
-    "postcss": "^7.0.29",
+    "modern-normalize": "^1.1.0",
+    "postcss": "^8.3.6",
+    "prismjs": "^1.24.1",
     "store": "^2.0.12"
   }
 }

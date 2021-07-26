@@ -1,0 +1,9 @@
+html,
+body {
+  background: white;
+}
+
+@import "modern-normalize/modern-normalize.css";
+@import "./styles/bettertext";
+@import "./styles/highlight";
+@import "./styles/style";

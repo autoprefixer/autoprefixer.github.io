@@ -1,0 +1,66 @@
+<style>
+    body {
+        margin: 0;
+        font-family: system, -apple-system, BlinkMacSystemFont, ".SFNSDisplay-Regular", sans-serif;
+        font-size: 1em;
+        line-height: 1.5;
+    }
+    a:link {
+        color: #0089ff;
+        text-decoration: none;
+        // border-bottom: .1em solid rgba(0,137,255,.3);
+        -webkit-transition: color .3s ease,border-color .3s ease;
+        transition: color .3s ease,border-color .3s ease
+    }
+
+    a:visited {
+        color: #b40eb4;
+        border-color: rgba(180,14,180,.3)
+    }
+
+    a:link:hover,a:visited:hover {
+        color: #f41224;
+        border-color: rgba(244,18,36,.3)
+    }
+
+</style>
+
+<div id="disqus_thread"></div>
+<script>
+window.addEventListener('message', receiveMessage, false);
+function receiveMessage(event)
+{
+    if (event.data) {
+        var msg;
+        try {
+            msg = JSON.parse(event.data);
+        } catch (err) {
+            // Do nothing
+        }
+        if (!msg)
+            return false;
+
+        if (msg.name === 'resize') {
+            window.parent.postMessage({
+              sentinel: 'amp',
+              type: 'embed-size',
+              height: msg.data.height
+            }, '*');
+        }
+    }
+}
+</script>
+<script>
+    var disqus_config = function () {
+        this.page.url = window.location.hash.slice(1);
+        this.page.identifier = window.location.hash;
+    };
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://ymatuhin.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
