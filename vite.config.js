@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: "index.html",
         ru: "ru/index.html",
+        "pt-br": "pt-br/index.html",
       },
     },
   },
