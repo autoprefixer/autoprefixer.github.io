@@ -1,6 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 2 version
+*/
+
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1,
@@ -55,9 +62,9 @@ a:visited:hover {
   border: 0;
   background: #f5f5f5;
   -webkit-box-shadow: 0 0 0 1px #ddd;
-          box-shadow: 0 0 0 1px #ddd;
-  font-family: 'Fira Code', 'Operator Mono', Consolas, Monaco, 'Andale Mono',
-    monospace;
+  box-shadow: 0 0 0 1px #ddd;
+  font-family: "Fira Code", "Operator Mono", Consolas, Monaco,
+    "Andale Mono", monospace;
   resize: none;
 
   -webkit-appearance: none;
@@ -78,15 +85,15 @@ a:visited:hover {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   margin-top: 10px;
 
   @media (max-width: 920px) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -95,7 +102,7 @@ a:visited:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 1em 0;
 
   &__right {
@@ -104,18 +111,19 @@ a:visited:hover {
 }
 
 .settings__version {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-          align-items: center;
-      -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-align: center;
   padding-top: 6px;
 
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   input {
     margin-right: 6px;
@@ -127,7 +135,7 @@ a:visited:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .select {
@@ -139,8 +147,8 @@ a:visited:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-          align-items: center;
-      -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-align: center;
   padding: 1.5em 0;
 
   img {
@@ -156,13 +164,14 @@ a:visited:hover {
 }
 
 .button {
+  cursor: pointer;
   padding-right: 1.5em;
   padding-left: 1.5em;
   height: 32px;
   border: 0;
   background: #f5f5f5;
   -webkit-box-shadow: 0 0 0 1px #ddd;
-          box-shadow: 0 0 0 1px #ddd;
+  box-shadow: 0 0 0 1px #ddd;
 }
 
 .filter {
@@ -172,13 +181,13 @@ a:visited:hover {
     padding-right: 12px;
   }
 
-  [type='text'] {
+  [type="text"] {
     padding-right: 0.5em;
     padding-left: 0.5em;
     height: 32px;
     border: 0;
     -webkit-box-shadow: 0 0 0 1px #ddd;
-            box-shadow: 0 0 0 1px #ddd;
+    box-shadow: 0 0 0 1px #ddd;
   }
 }
 
@@ -198,52 +207,58 @@ textarea,
   bottom: 100%;
   margin: 0;
   padding-bottom: 5px;
-  color: rgba(0, 0, 0, .5);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 80%;
 }
 
 .github-corner:hover .octo-arm {
   -webkit-animation: octocat-wave 560ms ease-in-out;
-          animation: octocat-wave 560ms ease-in-out;
+  animation: octocat-wave 560ms ease-in-out;
 }
 
 @-webkit-keyframes octocat-wave {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
-  20%, 60% {
+  20%,
+  60% {
     -webkit-transform: rotate(-25deg);
-            transform: rotate(-25deg);
+    transform: rotate(-25deg);
   }
-  40%, 80% {
+  40%,
+  80% {
     -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
 }
 
 @keyframes octocat-wave {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
-  20%, 60% {
+  20%,
+  60% {
     -webkit-transform: rotate(-25deg);
-            transform: rotate(-25deg);
+    transform: rotate(-25deg);
   }
-  40%, 80% {
+  40%,
+  80% {
     -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    transform: rotate(10deg);
   }
 }
 
 @media (max-width: 500px) {
   .github-corner:hover .octo-arm {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
   .github-corner .octo-arm {
     -webkit-animation: octocat-wave 560ms ease-in-out;
-            animation: octocat-wave 560ms ease-in-out;
+    animation: octocat-wave 560ms ease-in-out;
   }
 }
