@@ -5,6 +5,11 @@
 * Browsers: last 2 version
 */
 
+body {
+  margin-top: calc(24px + 2vh) !important;
+  margin-bottom: calc(24px + 2vh) !important;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -45,6 +50,7 @@ a:visited:hover {
 
 .ads {
   overflow: hidden;
+  margin-bottom: 12px;
 }
 
 .line {
@@ -63,8 +69,8 @@ a:visited:hover {
   background: #f5f5f5;
   -webkit-box-shadow: 0 0 0 1px #ddd;
   box-shadow: 0 0 0 1px #ddd;
-  font-family: "Fira Code", "Operator Mono", Consolas, Monaco,
-    "Andale Mono", monospace;
+  font-family: "Fira Code", "Operator Mono", Consolas, Monaco, "Andale Mono",
+    monospace;
   resize: none;
 
   -webkit-appearance: none;
