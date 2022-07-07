@@ -1,10 +1,10 @@
-import store from "store";
-import { highlightElement } from "prismjs";
-import { version as postcssVersion } from "postcss/package.json";
 import { version as autoprefixerVersion } from "autoprefixer/package.json";
+import { version as postcssVersion } from "postcss/package.json";
+import { highlightElement } from "prismjs";
+import store from "store";
 
-import langRedirect from "./redirect.js";
 import { CSS_EXAMPLE, DEFAULT_BROWSERS } from "./config";
+import langRedirect from "./redirect.js";
 
 import "./main.scss";
 
@@ -64,37 +64,52 @@ class App {
   }
 
   listeners() {
-    this.$leftPane.addEventListener("keyup", this.runPrefixer.bind(this), false);
-    this.$filterForm.addEventListener("submit", this.filterUpdate.bind(this), false);
+    this.$leftPane.addEventListener(
+      "keyup",
+      this.runPrefixer.bind(this),
+      false,
+    );
+    this.$filterForm.addEventListener(
+      "submit",
+      this.filterUpdate.bind(this),
+      false,
+    );
 
-    this.$selectButton.addEventListener("click", this.selectResult.bind(this), false);
-    this.$textFilter.addEventListener("keyup", this.updateBrowserListLink.bind(this), false);
-    this.$comment.addEventListener("change", this.toggleComment.bind(this), false);
+    this.$selectButton.addEventListener(
+      "click",
+      this.selectResult.bind(this),
+      false,
+    );
+    this.$textFilter.addEventListener(
+      "keyup",
+      this.updateBrowserListLink.bind(this),
+      false,
+    );
+    this.$comment.addEventListener(
+      "change",
+      this.toggleComment.bind(this),
+      false,
+    );
   }
 
-  runPrefixer() {
+  async runPrefixer() {
     const inputCSS = this.$leftPane.value;
     const params = {
       overrideBrowserslist: this.browserList,
       grid: "autoplace",
     };
 
-    this.postcss([this.autoprefixer(params)])
-      .process(inputCSS)
-      .then((compiled) => {
-        let html = "";
-
-        if (this.withComments) html += this.generateOutputComment();
-
-        html += this.textPrepare(compiled.css);
-
-        this.$rightPane.innerHTML = html;
-        highlightElement(this.$rightPane);
-      })
-      .catch((error) => {
-        console.log(error);
-        this.$rightPane.innerHTML = this.textPrepare(error.toString());
-      });
+    try {
+      const autoprefixer = this.autoprefixer(params);
+      const compiled = await this.postcss([autoprefixer]).process(inputCSS);
+      let html = "";
+      if (this.withComments) html += this.generateOutputComment();
+      html += this.textPrepare(compiled.css);
+      this.$rightPane.innerHTML = html;
+      highlightElement(this.$rightPane);
+    } catch (error) {
+      this.$rightPane.innerHTML = this.textPrepare(error.toString());
+    }
   }
 
   textPrepare(text = "") {
@@ -106,8 +121,11 @@ class App {
 
     const browsers = this.$textFilter.value.split(",");
     const trimmedBrowsers = browsers.map((browser) => browser.trim());
-    const newValue = trimmedBrowsers.length ? trimmedBrowsers : DEFAULT_SETTINGS;
+    const newValue = trimmedBrowsers.length
+      ? trimmedBrowsers
+      : DEFAULT_SETTINGS;
 
+    console.info(`🔥 newValue`, newValue);
     this.browserList = newValue;
     store.set("autoprefixer:browsers", newValue);
     this.runPrefixer();
@@ -137,7 +155,9 @@ class App {
   }
 
   updateBrowserListLink() {
-    this.$browserListLink.href = `https://browserl.ist/?q=${encodeURI(this.$textFilter.value)}`;
+    this.$browserListLink.href = `https://browserl.ist/?q=${encodeURI(
+      this.$textFilter.value,
+    )}`;
   }
 }
 
