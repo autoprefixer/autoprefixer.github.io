@@ -12,6 +12,7 @@ export default defineConfig({
         ru: "ru/index.html",
         fr: "fr/index.html",
         "pt-br": "pt-br/index.html",
+        "zh-cn": "zh-cn/index.html",
       },
     },
   },
