@@ -1,19 +1,24 @@
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Автопрефиксер CSS онлайн</title>
+    <title>Autoprefixer CSS online</title>
     <meta
       name="description"
-      content="Автопрефиксер — плагин для PostCSS для добавления вендорных префиксов в CSS"
+      content="Autoprefixer is a PostCSS plugin which parses your CSS and adds vendor prefixes"
     />
     <meta name="yandex-verification" content="1b1aa55a494642c2" />
-    <link rel="canonical" href="https://autoprefixer.github.io/ru/" />
+    <link rel="canonical" href="https://autoprefixer.github.io/zh-cn/" />
     <link
       rel="alternate"
       hreflang="en"
       href="https://autoprefixer.github.io/"
+    />
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href="https://autoprefixer.github.io/ru/"
     />
     <link
       rel="alternate"
@@ -24,11 +29,6 @@
       rel="alternate"
       hreflang="pt-br"
       href="https://autoprefixer.github.io/pt-br/"
-    />
-    <link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="https://autoprefixer.github.io/zh-cn/"
     />
     <meta property="og:image" content="/assets/logo.png" />
     <link
@@ -70,10 +70,9 @@
     <div class="logo_and_title">
       <img src="/assets/logo.png" width="80" alt="" />
       <div>
-        <h1>Автопрефиксер CSS онлайн</h1>
+        <h1>Autoprefixer CSS 在线</h1>
         <p>
-          Автопрефиксер — плагин для PostCSS для добавления вендорных префиксов
-          в CSS
+          Autoprefixer 是一个解析 CSS 并添加浏览器供应商前缀的 PostCSS 插件。
         </p>
       </div>
     </div>
@@ -86,40 +85,37 @@
       <pre
         class="textarea textarea-right"
         contenteditable=""
-      ><code class="language-css js-output"><strong>Загрузка...</strong></code></pre>
+      ><code class="language-css js-output"><strong>加载中...</strong></code></pre>
     </div>
 
     <div class="settings">
       <div class="settings__left">
         <form action="" class="filter js-filter">
-          <label class="filter__text">Фильтрация браузеров</label>
+          <label class="filter__text">浏览器列表</label>
 
           <input
             type="text"
             class="filter__input js-browsers-filter"
             placeholder="> 1%, last 2 versions"
           />
-          <input type="submit" class="filter__apply button" value="Применить" />
+          <input type="submit" class="filter__apply button" value="确定" />
         </form>
 
         <label class="settings__version">
           <input type="checkbox" class="js-comment" name="" checked />
-          <span> добавить комментарий с настройками в результат </span>
+          <span> 在结果中包含带有配置的注释 </span>
         </label>
       </div>
       <div class="settings__right">
-        <button class="button js-select" type="button">
-          Выделить результат
-        </button>
+        <button class="button js-select" type="button">选中结果</button>
       </div>
     </div>
 
     <p>
-      Вы также можете посмотреть, какие браузеры вы выбираете по строке фильтра
-      на
+      你还可以通过浏览器中列表输入框中文字在&nbsp;
       <a class="js-link-browserlist" href="https://browsersl.ist/"
         >browsersl.ist</a
-      >
+      >&nbsp;查询你的浏览器列表
     </p>
 
     <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
@@ -134,58 +130,54 @@
     <br /><br />
     <div class="ads" data-ads></div>
 
-    <h2>Что это</h2>
+    <h2>Autoprefixer 是什么</h2>
     <p>
-      Автопрефиксер онлайн — веб сервис для расстановки вендорных префиксов для
-      лучшей кроссбраузерности. Его
-      <a
+      Autoprefixer 在线 - 原生 Autoprefixer 在线 REPL。 它解析您的 CSS 并使用
+      <a href="https://caniuse.com/">Can I Use</a> 中的值
+      将浏览器供应商前缀添加到 CSS 规则中。它由谷歌<a
         href="https://developers.google.com/web/tools/setup/setup-buildtools#dont_trip_up_with_vendor_prefixes"
-        >рекомендуют</a
-      >
-      к использованию Google и используют в Twitter и Taobao.
+        >推荐</a
+      >，并在 Twitter 和淘宝使用。
     </p>
 
-    <h3>Как работает</h3>
+    <h3>它是如何工作的</h3>
     <p>
-      Автопрефиксер использует данные о популярности браузеров и поддержке ими
-      вендорных префиксов. Опираясь на эту информацию, он расставляет и удаляет
-      префиксы. Автопрефиксер поможет вам с префиксами для: animations,
-      transition, transform, grid, flex, flexbox и других.
+      Autoprefixer
+      使用有关浏览器受欢迎程度的数据及浏览器对供应商前缀支持的数据。
+      根据这些信息来增加或删除前缀。 它也可以帮助您获得 animations, transition,
+      transform, grid, flex, flexbox等规则的前缀。
     </p>
 
-    <h3>Фильтр браузеров</h3>
+    <h3>浏览器过滤</h3>
     <p>
-      Вы можете настроить какие браузеры учитывать в расставлении префиксов.
-      Подробнее о синтаксисе в
-      <a href="https://github.com/postcss/autoprefixer#browsers">документации</a
-      >. Там же есть блок с
-      <a href="https://github.com/postcss/autoprefixer#faq"
-        >вопросами и ответами</a
-      >.
+      您可以配置在转换中为哪些浏览器生成前缀。有关语法的更多详细信息详见<a
+        href="https://github.com/postcss/autoprefixer#browsers"
+        >文档</a
+      >。<a href="https://github.com/postcss/autoprefixer#faq">常见问题解答</a
+      >在文中已列出。
     </p>
 
-    <h3>Опции</h3>
+    <h3>选项</h3>
     <p>
-      <a
+      IE 浏览器的 Grid 布局 polyfill 已启用，在 autoprefixer 中的<a
         href="https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie"
-        >Полифил CSS grid</a
-      >
-      для Internet Explorer включен по умолчанию.
+        >默认</a
+      >不是这个。
     </p>
 
-    <h4>Большое спасибо</h4>
+    <h4>非常感谢</h4>
     <p>
-      <a href="https://github.com/ai">Андрею Ситнику</a>, автору
+      致 <a href="https://github.com/ai">Andrey Sitnik</a>，
       <a href="https://github.com/postcss/postcss">PostCSS</a>,
       <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>,
-      <a href="https://github.com/ai/browserslist">browserslist</a> и других
-      крутых инструментов.
+      <a href="https://github.com/ai/browserslist">browserslist</a>
+      以及一些非常棒工具的作者。
     </p>
 
     <a
       href="https://github.com/autoprefixer/autoprefixer.github.io"
       class="github-corner"
-      aria-label="View source on Github"
+      aria-label="在 Github 查看源码"
       ><svg
         width="80"
         height="80"
@@ -216,20 +208,19 @@
 
     <section>
       <small>
-        Автопрефиксер онлайн, так-же извесный по тегам: префиксер, генератор
-        префиксов, кроссбраузерный css генератор, генератор вендорных префиксов.
+        Autoprefixer online，又称： prefixer、 prefix generator、 cross browser
+        css generator、vendor prefixes generator。
         <br />
-        2017 © <a href="/">Автопрефиксер CSS онлайн</a> by
+        2017 © <a href="/">Autoprefixer 在线</a> by
         <a href="https://ymatuhin.ru/">ymatuhin</a>
-
         &nbsp; / &nbsp;
         <a href="/">In English</a>
+        &nbsp; / &nbsp;
+        <a href="/ru/">По-русски</a>
         &nbsp; / &nbsp;
         <a href="/fr/">En Français</a>
         &nbsp; / &nbsp;
         <a href="/pt-br/">Em Português</a>
-        &nbsp; / &nbsp;
-        <a href="/zh-cn/">中文</a>
       </small>
     </section>
 
