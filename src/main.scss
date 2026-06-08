@@ -1,12 +1,12 @@
+@use "modern-normalize/modern-normalize.css";
+@use "./styles/bettertext";
+@use "./styles/highlight";
+@use "./styles/style";
+
 html,
 body {
   background: white;
 }
-
-@import "modern-normalize/modern-normalize.css";
-@import "./styles/bettertext";
-@import "./styles/highlight";
-@import "./styles/style";
 
 .ya-share2 a {
   border: none !important;

@@ -18,9 +18,9 @@
     "vite": "^2.9.13"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.5.0",
     "modern-normalize": "^1.1.0",
-    "postcss": "^8.4.14",
+    "postcss": "^8.5.15",
     "prismjs": "^1.28.0",
     "store": "^2.0.12"
   }
